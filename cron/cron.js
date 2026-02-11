@@ -2,9 +2,7 @@ import { SSMClient, GetParameterCommand } from "@aws-sdk/client-ssm";
 import { createHmac } from "crypto";
 
 const PARAM_NAME = process.env.PARAMETER_NAME;
-const parametersClient = new SSMClient({
-    region: process.env.AWS_REGION || "ap-southeast-2",
-});
+const parametersClient = new SSMClient();
 
 const getSecretCommand = new GetParameterCommand({
     Name: PARAM_NAME,

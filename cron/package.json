@@ -1,5 +1,6 @@
 {
-	"dependencies": {
-		"@aws-sdk/client-ssm": "^3.987.0"
-	}
+    "type": "module",
+    "dependencies": {
+        "@aws-sdk/client-ssm": "^3.987.0"
+    }
 }

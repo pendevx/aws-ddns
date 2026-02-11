@@ -1,6 +1,7 @@
 FROM node:20-slim
-WORKDIR /
-COPY package*.json ./
-RUN npm install --production
+WORKDIR /app
+COPY package.json /app
+COPY pnpm-lock.yaml /app
+RUN npm install --omit=dev
 COPY . .
 CMD ["node", "index.js"]

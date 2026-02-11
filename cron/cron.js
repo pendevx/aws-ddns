@@ -1,6 +1,9 @@
 import { SSMClient, GetParameterCommand } from "@aws-sdk/client-ssm";
 import { createHmac } from "crypto";
 
+if (!process.env.PARAMETER_NAME) throw new Error("PARAMETER_NAME is not set");
+if (!process.env.LAMBDA_ENDPOINT) throw new Error("LAMBDA_ENDPOINT is not set");
+
 const PARAM_NAME = process.env.PARAMETER_NAME;
 const parametersClient = new SSMClient();
 

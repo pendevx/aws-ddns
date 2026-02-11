@@ -26,5 +26,5 @@ const res = await fetch(process.env.LAMBDA_ENDPOINT, {
     },
 });
 
-if (!res.ok)
-    console.error(`[${new Date().toISOString()}] something went wrong`);
+if (res.ok) console.log(`[${new Date().toISOString()}]: Execution successful.`);
+else console.error(`[${new Date().toISOString()}]: something went wrong`);
